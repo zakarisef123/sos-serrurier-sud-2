@@ -29,7 +29,19 @@
         body { font-family: 'Outfit', sans-serif; color: #334155; line-height: 1.6; scroll-behavior: smooth; background: #fff; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: var(--secondary); letter-spacing: -1px; }
 
-        /* HEADER RESPONSIVE */
+        /* POP-UP CONSENTEMENT */
+        #cookie-banner {
+            position: fixed; bottom: 20px; left: 20px; right: 20px; 
+            background: #fff; border: 1px solid var(--border);
+            border-radius: 16px; padding: 25px; z-index: 10000;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); display: none;
+            max-width: 500px;
+        }
+        .banner-btns { display: flex; gap: 12px; margin-top: 20px; }
+        .banner-btns button { flex: 1; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer; border: none; transition: 0.3s; font-family: 'Outfit'; }
+        .btn-accept { background: var(--secondary); color: white; }
+        .btn-refuse { background: #f0f0f0; color: #666; }
+
         header {
             position: fixed; top: 0; width: 100%; height: 80px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
@@ -37,13 +49,10 @@
             justify-content: space-between; padding: 0 5%; z-index: 1000;
         }
         .logo-text { font-size: 1.6rem; text-decoration: none; }
-
         nav.main-nav { display: flex; gap: 20px; }
         nav.main-nav a { text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.9rem; }
-
         .header-cta { font-size: 1.6rem; text-decoration: none; display: flex; align-items: center; }
 
-        /* HERO SMARTPHONE */
         .hero {
             padding: 140px 5% 60px; min-height: 60vh;
             background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url('serrurier.jpeg');
@@ -56,55 +65,47 @@
         .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; color: #475569; font-weight: 600; padding: 0 5%; }
         
         .hero-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; width: 100%; }
-        .btn-main, .btn-sec { padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1rem; flex: 1; max-width: 280px; min-width: 240px; text-align: center; }
+        .btn-main, .btn-sec { padding: 15px 25px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1rem; flex: 1; max-width: 280px; min-width: 240px; text-align: center; cursor: pointer; border: none; }
         .btn-main { background: var(--secondary); color: white; }
         .btn-sec { background: white; color: var(--secondary); border: 1px solid var(--border); }
 
-        /* MARQUEE */
         .marquee { overflow: hidden; padding: 20px 0; background: #fff; border-bottom: 1px solid var(--border); }
         .marquee-inner { display: inline-flex; animation: scroll 35s linear infinite; }
         .marquee-inner img { height: 30px; margin: 0 30px; }
 
-        /* SERVICES GRID */
         .services-section { padding: 60px 5%; background: var(--bg-light); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .service-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; }
+        .service-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; text-align: left; transition: 0.3s; }
         .service-card img { width: 100%; height: 180px; object-fit: cover; }
-        .card-body { padding: 20px; }
-        .price-tag { background: #fff1f2; color: var(--primary); padding: 4px 10px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; margin-bottom: 10px; display: inline-block; }
+        .card-body { padding: 20px; display: flex; flex-direction: column; }
+        .price-tag { background: #fff1f2; color: var(--primary); padding: 4px 10px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; margin-bottom: 10px; display: inline-block; width: fit-content; }
+        .btn-service { margin-top: 15px; padding: 10px; background: var(--secondary); color: white; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 700; font-size: 0.9rem; }
 
-        /* TRUST SECTION */
         .trust-section { padding: 60px 5%; background: var(--white); text-align: center; }
         .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto 0; text-align: left; }
 
-        /* AVIS SMARTPHONE */
         .reviews-section { padding: 60px 5%; background: var(--bg-light); overflow: hidden; border-top: 1px solid var(--border); }
         .review-container { max-width: 1200px; margin: 0 auto; position: relative; width: 100%; }
         .review-track { display: flex; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); width: 100%; }
         .review-group { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; min-width: 100%; }
         .review-card { background: white; padding: 25px; border-radius: 15px; position: relative; border: 1px solid var(--border); }
-        .review-card img.g-logo { width: 25px; position: absolute; top: 20px; right: 20px; }
+        .g-svg { width: 25px; height: 25px; position: absolute; top: 20px; right: 20px; }
         .stars { color: #facc15; margin-bottom: 15px; font-size: 1rem; }
 
-        /* ZONES */
         .zones-section { padding: 60px 5%; }
         .zones-box { background: var(--bg-light); border-radius: 24px; padding: 30px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; align-items: center; border: 1px solid var(--border); }
         .zone-pill { padding: 8px 16px; background: white; border: 1px solid var(--border); border-radius: 8px; font-weight: 700; color: var(--secondary); display: inline-block; margin: 4px; font-size: 0.85rem; }
 
-        /* CONTACT SOMBRE */
         .contact-section { padding: 60px 5%; background: var(--secondary); }
         .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .form-card { background: white; padding: 30px; border-radius: 20px; }
-        input, select, textarea { width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; background: #f8fafc; font-family: inherit; font-size: 16px; /* Evite le zoom auto sur iPhone */ }
+        input, select, textarea { width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 12px; background: #f8fafc; font-family: inherit; font-size: 16px; }
         .btn-submit { width: 100%; background: var(--primary); color: white; padding: 18px; border-radius: 10px; border: none; font-weight: 800; cursor: pointer; }
 
-        /* FOOTER */
         .footer-legal { background: #000; padding: 40px 5% 20px; color: #94a3b8; }
         .legal-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; border-bottom: 1px solid #1e293b; padding-bottom: 30px; margin-bottom: 20px; }
         .legal-box h5 { color: white; margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase; }
-        .legal-box p { font-size: 0.8rem; line-height: 1.5; }
 
-        /* BOUTON FLOTTANT */
         .floating-call { 
             position: fixed; bottom: 20px; right: 20px; background: var(--success); color: white; 
             padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 800; z-index: 2000; 
@@ -113,21 +114,59 @@
 
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* MEDIA QUERIES SMARTPHONE */
         @media (max-width: 768px) {
             header { height: 70px; padding: 0 4%; }
-            nav.main-nav { display: none; } /* On cache la nav texte sur mobile */
+            nav.main-nav { display: none; }
             .logo-text { font-size: 1.4rem; }
-            .hero { padding-top: 110px; }
-            .review-group { grid-template-columns: 1fr; } /* 1 seul avis par bloc sur mobile */
+            .review-group { grid-template-columns: 1fr; }
             .zones-box { grid-template-columns: 1fr; text-align: center; }
             .contact-container { grid-template-columns: 1fr; }
-            .legal-grid { text-align: center; }
         }
     </style>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // État par défaut (tout refusé)
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+
+        function updateConsent(status) {
+            const consentStatus = status === 'granted' ? 'granted' : 'denied';
+            gtag('consent', 'update', {
+                'ad_storage': consentStatus,
+                'ad_user_data': consentStatus,
+                'ad_personalization': consentStatus,
+                'analytics_storage': consentStatus
+            });
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('choice_made', 'true');
+        }
+
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('choice_made')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        });
+    </script>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWXXZN4K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="cookie-banner">
+        <p style="font-weight: 800; font-size: 1.1rem; margin-bottom: 10px;">Respect de votre vie privée 🛡️</p>
+        <p style="font-size: 0.9rem; color: #666;">AMD SOS Serrurier utilise des cookies pour améliorer votre dépannage et mesurer l'impact de nos publicités. Acceptez-vous l'utilisation de ces technologies ?</p>
+        <div class="banner-btns">
+            <button class="btn-refuse" onclick="updateConsent('denied')">Refuser</button>
+            <button class="btn-accept" onclick="updateConsent('granted')">Tout accepter</button>
+        </div>
+    </div>
 
     <header>
         <a href="#accueil" class="logo-text">🔑</a>
@@ -169,14 +208,16 @@
                     <span class="price-tag">Dès 50€ HT</span>
                     <h3>Ouverture porte claquée</h3>
                     <p>Ouverture technique sans dégât pour les serrures non verrouillées.</p>
+                    <a href="#contact" class="btn-service">DEMANDER</a>
                 </div>
             </div>
             <div class="service-card">
-                <img src="verouiller.jpeg" alt="Porte fermée">
+                <img src="verouiller.jpeg" alt="Porte verrouillée">
                 <div class="card-body">
                     <span class="price-tag">Dès 110€ HT</span>
                     <h3>Porte verrouillée à clé</h3>
                     <p>Intervention experte sur cylindre fermé. Matériel de précision.</p>
+                    <a href="#contact" class="btn-service">DEMANDER</a>
                 </div>
             </div>
             <div class="service-card">
@@ -185,6 +226,7 @@
                     <span class="price-tag">Certifié A2P</span>
                     <h3>Changement de Serrure</h3>
                     <p>Pose immédiate de cylindres haute sécurité toutes marques.</p>
+                    <a href="#contact" class="btn-service">DEMANDER</a>
                 </div>
             </div>
             <div class="service-card">
@@ -193,6 +235,7 @@
                     <span class="price-tag">Urgence Sinistre</span>
                     <h3>Sécurisation Post cambriolage</h3>
                     <p>Mise en sécurité immédiate et fermeture provisoire.</p>
+                    <a href="#contact" class="btn-service">DEMANDER</a>
                 </div>
             </div>
             <div class="service-card">
@@ -201,6 +244,7 @@
                     <span class="price-tag">Sur Mesure</span>
                     <h3>Blindage de Porte</h3>
                     <p>Renforcement de votre porte existante pour une sécurité maximale.</p>
+                    <a href="#contact" class="btn-service">DEMANDER</a>
                 </div>
             </div>
             <div class="service-card">
@@ -209,6 +253,7 @@
                     <span class="price-tag">Dès 90€</span>
                     <h3>Extraction de clé</h3>
                     <p>Retrait de morceau de clé cassée sans endommager le mécanisme.</p>
+                    <a href="#contact" class="btn-service">DEMANDER</a>
                 </div>
             </div>
         </div>
@@ -238,12 +283,16 @@
 
     <section class="reviews-section" id="avis">
         <div style="text-align: center; margin-bottom: 40px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" style="height: 30px; margin-bottom: 10px;">
+            <svg class="g-svg" style="display:inline-block; position:static; margin-bottom:10px;" viewBox="0 0 24 24">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"/>
+            </svg>
             <h2>Excellent 5.0/5 - 25 Avis</h2>
         </div>
         <div class="review-container">
-            <div class="review-track" id="track">
-                </div>
+            <div class="review-track" id="track"></div>
         </div>
     </section>
 
@@ -274,11 +323,16 @@
                 <form action="https://formspree.io/f/xgoreykb" method="POST">
                     <input type="text" name="nom" placeholder="Nom complet" required>
                     <input type="tel" name="tel" placeholder="Téléphone" required>
-                    <select name="type">
-                        <option value="Urgence">Urgence Immédiate</option>
-                        <option value="Devis">Devis Installation</option>
+                    <select name="type" required>
+                        <option value="" disabled selected>Nature de votre besoin...</option>
+                        <option value="Ouverture porte claquée">Ouverture porte claquée</option>
+                        <option value="Ouverture porte fermée">Ouverture porte fermée</option>
+                        <option value="Changement de Serrure">Changement de Serrure</option>
+                        <option value="Sécurisation Post cambriolage">Sécurisation Post cambriolage</option>
+                        <option value="Blindage de Porte">Blindage de Porte</option>
+                        <option value="Extraction de clé">Extraction de clé</option>
                     </select>
-                    <textarea name="message" rows="3" placeholder="Description du besoin..."></textarea>
+                    <textarea name="message" rows="3" placeholder="Détails de votre demande..."></textarea>
                     <button type="submit" class="btn-submit">ENVOYER LA DEMANDE</button>
                 </form>
             </div>
@@ -318,15 +372,19 @@
         ];
 
         const track = document.getElementById('track');
-        const isMobile = window.innerWidth <= 768;
-        const reviewsPerGroup = isMobile ? 1 : 3;
+        const reviewsPerGroup = (window.innerWidth <= 768) ? 1 : 3;
 
         for (let i = 0; i < reviews.length; i += reviewsPerGroup) {
             const group = document.createElement('div');
             group.className = 'review-group';
             group.innerHTML = reviews.slice(i, i + reviewsPerGroup).map(r => `
                 <div class="review-card">
-                    <img src="google.jpeg" class="g-logo" alt="Google">
+                    <svg class="g-svg" viewBox="0 0 24 24">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 12-4.53z" fill="#EA4335"/>
+                    </svg>
                     <div class="stars">★★★★★</div>
                     <p>"${r.t}"</p>
                     <h4 style="margin-top:15px; font-size:0.8rem;">- ${r.n}</h4>
