@@ -36,13 +36,10 @@
             justify-content: space-between; padding: 0 6%; z-index: 1000;
         }
         .logo-text { font-size: 1.8rem; text-decoration: none; }
-
         nav.main-nav { display: flex; gap: 20px; }
         nav.main-nav a { text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
         nav.main-nav a:hover { color: var(--primary); }
-
         .header-cta { font-size: 1.8rem; text-decoration: none; transition: 0.3s; }
-        .header-cta:hover { transform: scale(1.1); }
 
         .hero {
             padding: 120px 6% 60px; 
@@ -67,10 +64,10 @@
 
         .services-section { padding: 80px 6%; background: var(--bg-light); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .service-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; }
+        .service-card { background: white; border-radius: 20px; border: 1px solid var(--border); overflow: hidden; transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
         .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--primary); }
         .service-card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 25px; }
+        .card-body { padding: 25px; flex-grow: 1; }
         .price-tag { background: #fff1f2; color: var(--primary); padding: 5px 12px; border-radius: 6px; font-weight: 800; font-size: 0.85rem; margin-bottom: 15px; display: inline-block; }
 
         .reviews-section { padding: 80px 6%; background: #fff; overflow: hidden; border-top: 1px solid var(--border); }
@@ -79,7 +76,7 @@
         .review-group { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; min-width: 100%; }
         @media (max-width: 900px) { .review-group { grid-template-columns: 1fr; } .main-nav { display: none; } }
         .review-card { background: var(--bg-light); padding: 30px; border-radius: 15px; border: 1px solid var(--border); position: relative; }
-        .review-card img.g-logo { width: 20px; position: absolute; top: 30px; right: 30px; }
+        .review-card img.g-logo { width: 30px; height: 30px; position: absolute; top: 30px; right: 30px; object-fit: contain; }
         .stars { color: #facc15; margin-bottom: 15px; }
 
         .zones-section { padding: 80px 6%; background: #fff; }
@@ -132,10 +129,12 @@
         </div>
     </section>
 
-    <div class="marquee">
-        <div class="marquee-inner">
-            <img src="axa.png" alt="AXA"><img src="Maaf.png" alt="MAAF"><img src="matmut.png" alt="Matmut"><img src="generali.png" alt="Generali"><img src="allianze.png" alt="Allianz"><img src="maif.png" alt="MAIF"><img src="macif.png" alt="Macif"><img src="groupama.png" alt="Groupama">
-            <img src="axa.png" alt="AXA"><img src="Maaf.png" alt="MAAF"><img src="matmut.png" alt="Matmut"><img src="generali.png" alt="Generali"><img src="allianze.png" alt="Allianz"><img src="maif.png" alt="MAIF"><img src="macif.png" alt="Macif"><img src="groupama.png" alt="Groupama">
+    <div class="trust-bar">
+        <div class="marquee">
+            <div class="marquee-inner">
+                <img src="axa.png" alt="AXA"><img src="Maaf.png" alt="MAAF"><img src="matmut.png" alt="Matmut"><img src="generali.png" alt="Generali"><img src="allianze.png" alt="Allianz"><img src="maif.png" alt="MAIF"><img src="macif.png" alt="Macif"><img src="groupama.png" alt="Groupama">
+                <img src="axa.png" alt="AXA"><img src="Maaf.png" alt="MAAF"><img src="matmut.png" alt="Matmut"><img src="generali.png" alt="Generali"><img src="allianze.png" alt="Allianz"><img src="maif.png" alt="MAIF"><img src="macif.png" alt="Macif"><img src="groupama.png" alt="Groupama">
+            </div>
         </div>
     </div>
 
@@ -156,7 +155,7 @@
                 <img src="verouiller.jpeg" alt="Porte fermée">
                 <div class="card-body">
                     <span class="price-tag">Dès 110€ HT</span>
-                    <h3>Porte verrouillée à clé</h3>
+                    <h3>Ouverture porte verrouillée</h3>
                     <p>Intervention experte sur cylindre fermé. Matériel de précision.</p>
                 </div>
             </div>
@@ -168,16 +167,40 @@
                     <p>Pose immédiate de cylindres haute sécurité toutes marques.</p>
                 </div>
             </div>
+            <div class="service-card">
+                <img src="effraction.jpeg" alt="Effraction">
+                <div class="card-body">
+                    <span class="price-tag">Urgence</span>
+                    <h3>Sécurisation Post-Effraction</h3>
+                    <p>Mise en sécurité immédiate et fermeture provisoire après cambriolage.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="blindage.jpeg" alt="Blindage">
+                <div class="card-body">
+                    <span class="price-tag">Sur Mesure</span>
+                    <h3>Blindage de Porte</h3>
+                    <p>Renforcement de votre porte existante pour une sécurité maximale.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="clefcasser.jpeg" alt="Clé cassée">
+                <div class="card-body">
+                    <span class="price-tag">Dès 90€</span>
+                    <h3>Extraction de clé cassée</h3>
+                    <p>Retrait de morceau de clé sans endommager le mécanisme interne.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="reviews-section" id="avis">
         <div style="text-align: center; margin-bottom: 50px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" style="height: 30px; margin-bottom: 10px;">
-            <h2>Satisfaction Client : 5.0/5</h2>
+            <h2>Excellent 5.0/5 ★★★★★</h2>
         </div>
         <div class="review-container">
-            <div class="review-track" id="track"></div>
+            <div class="review-track" id="track">
+                </div>
         </div>
     </section>
 
@@ -185,7 +208,7 @@
         <div class="zones-box">
             <div>
                 <h2>Intervention Rapide</h2>
-                <p>Artisans locaux basés stratégiquement pour couvrir le Sud en moins de 30 minutes.</p>
+                <p>Nos artisans sont déjà présents dans votre secteur.</p>
             </div>
             <div class="zones-grid">
                 <span class="zone-pill">Toulon</span><span class="zone-pill">Nice</span><span class="zone-pill">Cannes</span><span class="zone-pill">Marseille</span><span class="zone-pill">Hyères</span><span class="zone-pill">Antibes</span><span class="zone-pill">Fréjus</span><span class="zone-pill">Draguignan</span><span class="zone-pill">La Seyne</span>
@@ -210,7 +233,7 @@
                         <option value="Urgence">Urgence Immédiate</option>
                         <option value="Devis">Devis Installation</option>
                     </select>
-                    <textarea name="msg" rows="3" placeholder="Description du besoin..."></textarea>
+                    <textarea name="message" rows="3" placeholder="Description du besoin..."></textarea>
                     <button type="submit" class="btn-submit">ENVOYER LA DEMANDE</button>
                 </form>
             </div>
@@ -239,7 +262,7 @@
 
     <script>
         const reviews = [
-            {n:"Jean M.", t:"Arrivé en 20 min à Toulon. Prix respecté."},
+            {n:"Jean M.", t:"Arrivé en 20 min à Toulon. Prix respecté. Travail soigné."},
             {n:"Sarah L.", t:"Serrurier honnête. Pas de frais inutiles."},
             {n:"Patrick D.", t:"Super service à Nice. Très professionnel."},
             {n:"Michel B.", t:"Technicien ponctuel. Travail nickel."},
@@ -253,7 +276,7 @@
             group.className = 'review-group';
             group.innerHTML = reviews.slice(i, i + 3).map(r => `
                 <div class="review-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="g-logo">
+                    <img src="google.jpeg" class="g-logo" alt="Google">
                     <div class="stars">★★★★★</div>
                     <p>"${r.t}"</p>
                     <h4 style="margin-top:15px; font-size:0.8rem;">- ${r.n}</h4>
