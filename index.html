@@ -49,8 +49,11 @@
             justify-content: space-between; padding: 0 5%; z-index: 1000;
         }
         .logo-text { font-size: 1.6rem; text-decoration: none; }
-        nav.main-nav { display: flex; gap: 20px; }
-        nav.main-nav a { text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.9rem; }
+        
+        /* NAVIGATION ADAPTÉE AU MOBILE */
+        nav.main-nav { display: flex; gap: 12px; }
+        nav.main-nav a { text-decoration: none; color: var(--secondary); font-weight: 600; font-size: 0.8rem; }
+        
         .header-cta { font-size: 1.6rem; text-decoration: none; display: flex; align-items: center; }
 
         .hero {
@@ -115,9 +118,10 @@
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
         @media (max-width: 768px) {
-            header { height: 70px; padding: 0 4%; }
-            nav.main-nav { display: none; }
-            .logo-text { font-size: 1.4rem; }
+            header { height: 75px; padding: 0 3%; }
+            nav.main-nav { gap: 8px; }
+            nav.main-nav a { font-size: 0.7rem; }
+            .logo-text { font-size: 1.2rem; }
             .review-group { grid-template-columns: 1fr; }
             .zones-box { grid-template-columns: 1fr; text-align: center; }
             .contact-container { grid-template-columns: 1fr; }
@@ -127,8 +131,6 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-
-        // État par défaut (tout refusé)
         gtag('consent', 'default', {
             'ad_storage': 'denied',
             'ad_user_data': 'denied',
@@ -161,10 +163,10 @@
 
     <div id="cookie-banner">
         <p style="font-weight: 800; font-size: 1.1rem; margin-bottom: 10px;">Respect de votre vie privée 🛡️</p>
-        <p style="font-size: 0.9rem; color: #666;">AMD SOS Serrurier utilise des cookies pour améliorer votre dépannage et mesurer l'impact de nos publicités. Acceptez-vous l'utilisation de ces technologies ?</p>
+        <p style="font-size: 0.9rem; color: #666;">AMD SOS Serrurier utilise des cookies pour améliorer votre dépannage. Acceptez-vous l'utilisation de ces technologies ?</p>
         <div class="banner-btns">
             <button class="btn-refuse" onclick="updateConsent('denied')">Refuser</button>
-            <button class="btn-accept" onclick="updateConsent('granted')">Tout accepter</button>
+            <button class="btn-accept" onclick="updateConsent('granted')">Accepter</button>
         </div>
     </div>
 
@@ -324,7 +326,7 @@
                     <input type="text" name="nom" placeholder="Nom complet" required>
                     <input type="tel" name="tel" placeholder="Téléphone" required>
                     <select name="type" required>
-                        <option value="" disabled selected>Nature de votre besoin...</option>
+                        <option value="" disabled selected>Choisir un service...</option>
                         <option value="Ouverture porte claquée">Ouverture porte claquée</option>
                         <option value="Ouverture porte fermée">Ouverture porte fermée</option>
                         <option value="Changement de Serrure">Changement de Serrure</option>
@@ -394,9 +396,8 @@
         }
 
         let cur = 0;
-        const totalGroups = track.children.length;
         setInterval(() => {
-            cur = (cur + 1) % totalGroups;
+            cur = (cur + 1) % track.children.length;
             track.style.transform = `translateX(-${cur * 100}%)`;
         }, 5000);
     </script>
